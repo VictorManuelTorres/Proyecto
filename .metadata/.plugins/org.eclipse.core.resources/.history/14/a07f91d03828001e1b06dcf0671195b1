@@ -1,0 +1,38 @@
+package com.overcome.test.controller;
+
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.overcome.test.ServiceFactory;
+import com.overcome.test.entity.Archivo;
+import com.overcome.test.service.ArchivoEntityService;
+
+
+@Controller
+public class EquipoController {
+
+		EquipoEntityService service = ServiceFactory.getInstance().getEquipoEntityService();
+
+		@RequestMapping("/equipo/save")
+		public ResponseEntity<String> save() {
+			Equipo entity = new Equipo();
+			entity.setId(1);
+			entity.setTipoArchivo("soprte");
+			entity.setIdTicket(1);
+			service.save(entity);
+			return new ResponseEntity<>("OK", HttpStatus.OK);
+
+		}
+
+		@RequestMapping("/equipo/all")
+		public ResponseEntity<List<Equipo>> test() {
+
+			return new ResponseEntity<>(service.list(), HttpStatus.OK);
+		}
+	}
+}

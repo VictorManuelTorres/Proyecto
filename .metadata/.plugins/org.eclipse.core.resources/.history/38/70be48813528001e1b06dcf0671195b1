@@ -1,0 +1,136 @@
+package com.overcome.test.entity;
+
+import java.util.Date;
+import com.googlecode.objectify.annotation.Entity;
+import com.googlecode.objectify.annotation.Id;
+
+@Entity
+public class Ticket {
+    
+	@Id long id;
+    private String titulo;
+    private Date fechaCreacion;
+    private String idResponsable;
+    private String tipoIncidencia;
+    private String gravedadIncidencia;
+    private String versionSoftware;
+    private String descripcion;
+    private String estado;
+	
+    
+    //FIELDS
+    public Ticket(int id, String titulo, Date fechaCreacion, String idResponsable, String tipoIncidencia,
+			String gravedadIncidencia, String versionSoftware, String descripcion, String estado) {
+		super();
+		this.id = id;
+		this.titulo = titulo;
+		this.fechaCreacion = fechaCreacion;
+		this.idResponsable = idResponsable;
+		this.tipoIncidencia = tipoIncidencia;
+		this.gravedadIncidencia = gravedadIncidencia;
+		this.versionSoftware = versionSoftware;
+		this.descripcion = descripcion;
+		this.estado = estado;
+	}
+    
+    
+    public Ticket() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	//GETTERS AND SETTERS
+	public long getId() {
+		return id;
+	}
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+
+	public Date getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+
+	public void setFechaCreacion(Date fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
+	}
+
+
+	public String getIdResponsable() {
+		return idResponsable;
+	}
+
+
+	public void setIdResponsable(String idResponsable) {
+		this.idResponsable = idResponsable;
+	}
+
+
+	public String getTipoIncidencia() {
+		return tipoIncidencia;
+	}
+
+
+	public void setTipoIncidencia(String tipoIncidencia) {
+		this.tipoIncidencia = tipoIncidencia;
+	}
+
+
+	public String getGravedadIncidencia() {
+		return gravedadIncidencia;
+	}
+
+
+	public void setGravedadIncidencia(String gravedadIncidencia) {
+		this.gravedadIncidencia = gravedadIncidencia;
+	}
+
+
+	public String getVersionSoftware() {
+		return versionSoftware;
+	}
+
+
+	public void setVersionSoftware(String versionSoftware) {
+		this.versionSoftware = versionSoftware;
+	}
+
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+
+	public String getEstado() {
+		return estado;
+	}
+
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+     
+    
+
+
+}

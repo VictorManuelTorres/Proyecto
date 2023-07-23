@@ -1,0 +1,10 @@
+package com.overcome.test.service;
+
+import com.overcome.service.EntityService;
+import com.overcome.test.entity.Ticket;
+
+
+public interface TicketEntityService extends EntityService<Ticket> {
+	
+	
+}

@@ -1,0 +1,50 @@
+document.getElementById("button").addEventListener("click", crear);
+//document.querySelector("input").addEventListener("focus", limpiarTexto);
+function crear(e){
+    let flag = false;
+    e.preventDefault();
+    const form  = document.getElementById("form");
+    let inputs = document.querySelectorAll("input");
+    const select = document.querySelectorAll("select");
+    const response = {
+        titulo:form.elements[0].value,
+        responsable:form.elements[1].value,
+        incidente:form.elements[2].value,
+        gravedad:form.elements[3].value,
+        version:form.elements[4].value,
+        archivo:form.elements[5].value,
+        descripcion:form.elements[6].value,
+    }
+   
+        inputs.forEach(value => {
+            if(value.value === ''){
+                flag = true;
+                value.classList.add("error-input");
+            }
+        });
+        if(flag){
+            alert("INGRESA LOS DATOS CORRECTOS");
+        } else {
+        alert("SE INGRESO CORRECTAMENTE A LA BASE DE DATOS" 
+        +"\n " + "TITULO:" + response.titulo
+        +"\n"  + "RESPONSABLE:" + response.responsable
+        +"\n"  + "INCIDENTE:" + response.incidente
+        +"\n"  + "GRAVEDAD:" + response.gravedad
+        +"\n"  + "VERSION:" + response.version
+        +"\n"  + "ARCHIVO:" + response.archivo
+        +"\n"  + "DESCRIPCION:" + response.descripcion
+        );
+    }
+}
+
+async function consultaUsuario() {
+    const response = await fetch("http://localhost:8080/usuario/all");
+    const usuario = await response.json();
+    console.log(usuario);
+  }
+
+function limpiarTexto (e){
+    
+    
+    e.classList.remove("error-input");
+}

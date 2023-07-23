@@ -1,0 +1,48 @@
+package com.overcome.test.entity;
+
+public class Archivo {
+     private int id;
+     private String tipoArchivo;
+     private int idTicket;
+	
+     
+     //FIELDS
+     public Archivo(int id, String tipoArchivo, int idTicket) {
+		super();
+		this.id = id;
+		this.tipoArchivo = tipoArchivo;
+		this.idTicket = idTicket;
+	}
+
+    //GETTERS AND SETTERS
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public String getTipoArchivo() {
+		return tipoArchivo;
+	}
+
+
+	public void setTipoArchivo(String tipoArchivo) {
+		this.tipoArchivo = tipoArchivo;
+	}
+
+
+	public int getIdTicket() {
+		return idTicket;
+	}
+
+
+	public void setIdTicket(int idTicket) {
+		this.idTicket = idTicket;
+	}
+     
+     
+}

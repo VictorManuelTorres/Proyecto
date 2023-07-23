@@ -1,0 +1,42 @@
+package com.overcome.test.controller;
+
+
+import java.util.Date;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.overcome.test.ServiceFactory;
+import com.overcome.test.entity.Ticket;
+import com.overcome.test.service.TicketEntityService;
+
+@Controller
+public class TicketController {
+
+	TicketEntityService service = ServiceFactory.getInstance().getTicketEntityService();
+	
+	@RequestMapping("/Ticket")
+	public ModelAndView showLogin() {
+		return  new ModelAndView("page.login");
+		
+	}
+	
+	@RequestMapping("/save")
+	public ResponseEntity<String> save(){
+	Ticket entity = new Ticket();
+	entity.setId(1);
+	entity.setTitulo("ticket");
+    entity.setFechaCreacion(new Date());
+    entity.setIdResponsable("victor");
+    entity.setTipoIncidencia("bug");
+    entity.setGravedadIncidencia("medium");
+    entity.setVersionSoftware("1.4");
+    entity.setDescripcion("problema");
+    entity.setEstado("Nuevo");
+    service.save(entity);
+	return new ResponseEntity<>("OK", HttpStatus.OK);
+}
+}

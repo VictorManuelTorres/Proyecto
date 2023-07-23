@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
+<fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+<fullyQualifiedTypeName name="com.google.common.net.MediaType"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+<fullyQualifiedTypeName name="org.springframework.http.MediaType"/>
+<fullyQualifiedTypeName name="com.googlecode.objectify.annotation.Entity"/>
+<fullyQualifiedTypeName name="com.googlecode.objectify.annotation.Id"/>
+<fullyQualifiedTypeName name="com.overcome.test.entity.Equipo"/>
+<fullyQualifiedTypeName name="com.overcome.test.controller.EquipoController"/>
+<fullyQualifiedTypeName name="com.overcome.test.service.EquipoEntityService"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,38 @@
+package com.overcome.test.entity;
+
+import com.googlecode.objectify.annotation.Entity;
+import com.googlecode.objectify.annotation.Id;
+
+@Entity
+public class Equipo {
+	
+	
+	
+	@Id long id;
+	private String nombre;
+
+	public Equipo(long id, String nombre) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	
+
+}

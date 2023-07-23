@@ -1,0 +1,51 @@
+package com.overcome.test.controller;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.overcome.test.ServiceFactory;
+import com.overcome.test.entity.Ticket;
+import com.overcome.test.service.TicketEntityService;
+
+@Controller
+public class TicketController {
+ 
+	TicketEntityService service = ServiceFactory.getInstance().getTicketEntityService();
+    
+	@RequestMapping("/ticket")
+	public ModelAndView showLogin() {
+		return new ModelAndView("page.registroticket");
+	}
+	@PostMapping(value = "/ticket/save",  consumes = {MediaType}) 
+	public ResponseEntity<String> save(@RequestBody Ticket ticket , Model model) {
+		Ticket entity = new Ticket();
+		entity.setId(2);
+		entity.setTitulo(ticket.getTitulo());
+		entity.setFechaCreacion(new Date());
+		entity.setIdResponsable("victor");
+		entity.setTipoIncidencia("bug");
+		entity.setGravedadIncidencia("medium");
+		entity.setVersionSoftware("1.4");
+		entity.setDescripcion("problema");
+		entity.setEstado("Nuevo");
+		service.save(entity);
+		return new ResponseEntity<>("OK", HttpStatus.OK);
+	}
+
+	@RequestMapping("/ticket/all")
+	public ResponseEntity<List<Ticket>> test() {
+
+		return new ResponseEntity<>(service.list(), HttpStatus.OK);
+	}
+}

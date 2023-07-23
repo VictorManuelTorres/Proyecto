@@ -1,0 +1,16 @@
+package com.overcome.test.service.impl;
+import com.overcome.service.impl.EntityServiceImpl;
+import com.overcome.test.entity.Archivo;
+import com.overcome.test.service.ArchivoEntityService;
+
+
+
+
+
+
+
+public class ArchivoEntityServiceImpl extends EntityServiceImpl<Archivo> implements ArchivoEntityService {
+
+	
+	
+}

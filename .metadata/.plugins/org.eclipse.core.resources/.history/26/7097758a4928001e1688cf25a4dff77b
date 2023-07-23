@@ -1,0 +1,61 @@
+package com.overcome.test.entity;
+
+import com.googlecode.objectify.annotation.Entity;
+import com.googlecode.objectify.annotation.Id;
+
+@Entity
+public class Archivo {
+     
+	
+	
+	 @Id long id;
+     private String tipoArchivo;
+     @Id long idTicket;
+	
+     
+     
+     public Archivo() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	//FIELDS
+     public Archivo(long id, String tipoArchivo, long idTicket) {
+		super();
+		this.id = id;
+		this.tipoArchivo = tipoArchivo;
+		this.idTicket = idTicket;
+	}
+
+    //GETTERS AND SETTERS
+	public long getId() {
+		return id;
+	}
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+	public String getTipoArchivo() {
+		return tipoArchivo;
+	}
+
+
+	public void setTipoArchivo(String tipoArchivo) {
+		this.tipoArchivo = tipoArchivo;
+	}
+
+
+	public long getIdTicket() {
+		return idTicket;
+	}
+
+
+	public void setIdTicket(long idTicket) {
+		this.idTicket = idTicket;
+	}
+     
+     
+}

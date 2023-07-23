@@ -1,0 +1,73 @@
+package com.overcome.test.entity;
+
+import com.googlecode.objectify.annotation.Entity;
+import com.googlecode.objectify.annotation.Id;
+
+@Entity
+public class Usuario {
+	
+	@Id long id;
+	private String nombre;
+	private String correo;
+	private String contrasena;
+	@Id long idEquipo;
+
+	// FIELDS
+	public Usuario(long id, String nombre, String correo, String contrasena, long idEquipo) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.correo = correo;
+		this.contrasena = contrasena;
+		this.idEquipo = idEquipo;
+	}
+
+
+	public Usuario() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	// GETTERS AND SETTERS
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+
+	public String getContrasena() {
+		return contrasena;
+	}
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
+	}
+
+	public int getIdEquipo() {
+		return idEquipo;
+	}
+
+	public void setIdEquipo(int idEquipo) {
+		this.idEquipo = idEquipo;
+	}
+
+}

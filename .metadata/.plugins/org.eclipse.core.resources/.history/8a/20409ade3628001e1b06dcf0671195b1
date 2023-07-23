@@ -1,0 +1,9 @@
+package com.overcome.test.service.impl;
+
+import com.overcome.service.impl.EntityServiceImpl;
+import com.overcome.test.entity.Ticket;
+import com.overcome.test.service.TicketEntityService;
+
+public class EquipoEntityServiceImpl extends EntityServiceImpl<Equipo> implements EquipoEntityService { 
+
+}

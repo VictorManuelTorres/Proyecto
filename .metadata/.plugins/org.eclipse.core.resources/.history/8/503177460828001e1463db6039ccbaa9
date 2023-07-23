@@ -1,0 +1,45 @@
+package com.overcome.test.controller;
+
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.overcome.test.ServiceFactory;
+import com.overcome.test.entity.Archivo;
+import com.overcome.test.entity.Usuario;
+import com.overcome.test.service.UsuarioEntityService;
+
+@Controller
+public class UsuarioController {
+      
+	
+	
+	UsuarioEntityService service = ServiceFactory.getInstance().getUserEntityService();
+	
+	@RequestMapping("/login")
+	public ModelAndView showLogin() {
+		return  new ModelAndView("page.login");
+	}
+	@RequestMapping("/save")
+	public ResponseEntity<String> save(){
+		Usuario entity = new Usuario();
+		entity.setId(1);
+		entity.setNombre("Manuel");
+		entity.setCorreo("manuel@gmail.com");
+		entity.setContrasena("12345");
+		entity.setIdEquipo(1);
+		service.save(entity);
+		return new ResponseEntity<>("OK", HttpStatus.OK);
+		
+}
+	
+	@RequestMapping("/all")
+	public ResponseEntity<List<Archivo>> test() {
+
+		return new ResponseEntity<>(service.list(), HttpStatus.OK);
+	}
+}

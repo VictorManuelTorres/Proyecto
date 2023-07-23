@@ -1,0 +1,55 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<script src="js/login.js"></script>
+
+<div class="container">
+	<header>cabecera</header>
+   	<nav>
+       
+   	</nav>
+   	<main>
+        <form action="index.html" method="post" id="form">
+            <ul>
+                <span class="title">TICKET</span>
+              <li>
+                <label for="titulo">Titulo</label>
+                <input onfocus="limpiarTexto(this)" type="text" id="titulo" name="titulo" />
+              </li>
+              <li>
+                <label for="responsable">No Responsable</label>
+                <input onfocus="limpiarTexto(this)" type="text" id="responsable" name="responsable" />
+              </li>
+              <li>
+                <label for="">Incidente</label>
+                <select id="" name="select">
+                    <option value="feature">feature</option>
+                    <option value="bug" selected>bug</option>
+                  </select>
+              </li>
+              <li>
+                <label for="">Gravedad</label>
+                <select id="" name="select">
+                    <option value="low">low</option>
+                    <option value="medium" selected>medium</option>
+                    <option value="high" selected>high</option>
+                  </select>
+              </li>
+              <li>
+                <label for="version">Version</label>
+                <input onfocus="limpiarTexto(this)" type="text" id="version" name="version" />
+              </li>
+              <li>
+                <label for="archivo">Archivo</label>
+                <input onfocus="limpiarTexto(this)" type="text" id="archivo" name="archivo" />
+              </li>
+              <li class="margen-abajo">
+                <label  for="msg">Descripcion</label>
+                <textarea id="msg" name="user_message"></textarea>
+              </li>
+                <button id="button"  class="boton-enviar">Enviar</button>
+            </ul>
+          </form>
+   	</main>
+   	<footer>  </footer> 
+    <script src="app.js"></script> 
+</div>

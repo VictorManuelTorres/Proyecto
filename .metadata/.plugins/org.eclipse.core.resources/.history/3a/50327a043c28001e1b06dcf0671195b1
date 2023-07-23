@@ -1,0 +1,75 @@
+package com.overcome.test;
+
+import com.overcome.test.service.ArchivoEntityService;
+import com.overcome.test.service.EquipoEntityService;
+import com.overcome.test.service.ExampleEntityService;
+import com.overcome.test.service.TicketEntityService;
+import com.overcome.test.service.UsuarioEntityService;
+
+public class ServiceFactory {
+
+	
+	
+	
+	
+	
+	
+	protected static volatile ServiceFactory instance;
+	protected ServiceFactory() {}
+	
+	public static ServiceFactory getInstance() {
+		if (instance == null) {
+			synchronized (ServiceFactory.class) {
+				instance = new ServiceFactory();
+			}
+		}
+		return instance;
+	}
+	
+	private ExampleEntityService exampleEntityService;
+	
+	public void setExampleEntityService(ExampleEntityService exampleEntityService) {
+		this.exampleEntityService = exampleEntityService;
+	}
+	public ExampleEntityService getExampleEntityService() {
+		return exampleEntityService;
+	}
+	
+	private UsuarioEntityService usuarioEntityService;
+	public UsuarioEntityService getUsuarioEntityService() {
+		return usuarioEntityService;
+	}
+
+	public void setUsuarioEntityService(UsuarioEntityService usuarioEntityService) {
+		this.usuarioEntityService = usuarioEntityService;
+	}
+	
+	private TicketEntityService ticketEntityService;
+	public TicketEntityService getTicketEntityService() {
+		return ticketEntityService;
+	}
+
+	public void setTicketEntityService(TicketEntityService ticketEntityService) {
+		this.ticketEntityService = ticketEntityService;
+	}
+	
+	private ArchivoEntityService archivoEntityService;
+	public ArchivoEntityService getArchivoEntityService() {
+		return archivoEntityService;
+	}
+
+	public void setArchivoEntityService(ArchivoEntityService archivoEntityService) {
+		this.archivoEntityService = archivoEntityService;
+	}
+	
+	private EquipoEntityService equipoEntityService;
+	public EquipoEntityService getEquipoEntityService() {
+		return equipoEntityService;
+	}
+
+	public void setEquipoEntityService(EquipoEntityService equipoEntityService) {
+		this.equipoEntityService = equipoEntityService;
+	}
+	
+
+}
